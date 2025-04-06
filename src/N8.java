@@ -1,35 +1,24 @@
+import java.util.Scanner;
+
 public class N8 {
     public static void main(String[] args) {
-        Gerente gerente = new Gerente();
-        gerente.nome = "Gerente";
-        gerente.salarioBase = 1000;
+        Scanner scanner = new Scanner(System.in);
 
-        Estagiario estagiario = new Estagiario();
-        estagiario.nome = "Estagiario";
-        estagiario.salarioBase = 1000;
+        System.out.print("Digite o nome do gerente: ");
+        String nomeGerente = scanner.nextLine();
+        System.out.print("Digite o salário base do gerente: ");
+        double salarioGerente = scanner.nextDouble();
+        double salarioFinalGerente = salarioGerente * 1.2;
 
-        System.out.println("Salário do Gerente " + gerente.nome + ": R$ " + gerente.calcularSalario());
-        System.out.println("Salário do Estagiário " + estagiario.nome + ": R$ " + estagiario.calcularSalario());
+        scanner.nextLine();
+        System.out.print("Digite o nome do estagiário: ");
+        String nomeEstagiario = scanner.nextLine();
+        System.out.print("Digite o salário base do estagiário: ");
+        double salarioEstagiario = scanner.nextDouble();
+        double salarioFinalEstagiario = salarioEstagiario * 0.9;
+
+        System.out.println("Salário final do Gerente " + nomeGerente + ": " + salarioFinalGerente);
+        System.out.println("Salário final do Estagiário " + nomeEstagiario + ": " + salarioFinalEstagiario);
+
     }
 }
-
-class Funcionario {
-    String nome;
-    double salarioBase;
-
-    public double calcularSalario() {
-        return salarioBase;
-    }
-}
-
- class Gerente extends Funcionario {
-    public double calcularSalario() {
-        return salarioBase * 1.20;
-    }
-}
-
-class Estagiario extends Funcionario {
-
-    public double calcularSalario() {
-        return salarioBase * 0.90;
-    }}

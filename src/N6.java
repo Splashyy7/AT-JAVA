@@ -46,7 +46,7 @@ class Veiculo {
         if (km > 0) {
             this.quilometragem += km;
         } else {
-            System.out.println("Erro: A quilometragem da viagem deve ser maior que zero.");
+            System.out.println("Erro: A quilometragem da viagem deve ser maior que zero");
         }
     }
 }
