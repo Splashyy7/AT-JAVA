@@ -20,13 +20,10 @@ public class N12 {
                 mensagens[i] = usuario2 + ": " + scanner.nextLine();
             }
         }
-
-        System.out.println("\n===== Histórico de Mensagens =====");
+        System.out.println("===== Histórico de Mensagens =====");
         for (String mensagem : mensagens) {
             System.out.println(mensagem);
         }
-
-        System.out.println("\nObrigado por utilizarem o sistema! Boa sorte para vocês! 🚀");
-
+        System.out.println("Obrigado por utilizarem o sistema! Boa sorte para vocês! 🚀");
     }
 }

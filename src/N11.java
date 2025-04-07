@@ -5,29 +5,28 @@ import java.util.Random;
 public class N11 {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] numerosSorteados = new int[6];
+        int[] sorteio = new int[6];
         for (int i = 0; i < 6; i++) {
-            numerosSorteados[i] = random.nextInt(60) + 1;
+            sorteio[i] = random.nextInt(60) + 1;
         }
 
         Scanner scanner = new Scanner(System.in);
-        int[] numerosUsuario = new int[6];
+        int[] numeroescolhido = new int[6];
         System.out.println("Digite 6 números entre 1 e 60:");
         for (int i = 0; i < 6; i++) {
-            numerosUsuario[i] = scanner.nextInt();
+            numeroescolhido[i] = scanner.nextInt();
         }
 
         int acertos = 0;
-        for (int numeroUsuario : numerosUsuario) {
-            for (int numeroSorteado : numerosSorteados) {
+        for (int numeroUsuario : numeroescolhido) {
+            for (int numeroSorteado : sorteio) {
                 if (numeroUsuario == numeroSorteado) {
                     acertos++;
                 }
             }
         }
-
-        System.out.println("Números sorteados: " + Arrays.toString(numerosSorteados));
-        System.out.println("Seus números: " + Arrays.toString(numerosUsuario));
+        System.out.println("Números sorteados: " + Arrays.toString(sorteio));
+        System.out.println("Seus números: " + Arrays.toString(numeroescolhido));
         System.out.println("Você acertou " + acertos + " números");
     }
 }

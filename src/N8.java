@@ -1,24 +1,50 @@
-import java.util.Scanner;
-
 public class N8 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Funcionario gerente = new Gerente("Gerente", 2000.0);
+        Funcionario estagiario = new Estagiario("Estagiário", 2000.0);
 
-        System.out.print("Digite o nome do gerente: ");
-        String nomeGerente = scanner.nextLine();
-        System.out.print("Digite o salário base do gerente: ");
-        double salarioGerente = scanner.nextDouble();
-        double salarioFinalGerente = salarioGerente * 1.2;
+        gerente.exibirSalarioFinal();
+        estagiario.exibirSalarioFinal();
+    }
+}
 
-        scanner.nextLine();
-        System.out.print("Digite o nome do estagiário: ");
-        String nomeEstagiario = scanner.nextLine();
-        System.out.print("Digite o salário base do estagiário: ");
-        double salarioEstagiario = scanner.nextDouble();
-        double salarioFinalEstagiario = salarioEstagiario * 0.9;
+class Funcionario {
+    protected String nome;
+    protected double salarioBase;
 
-        System.out.println("Salário final do Gerente " + nomeGerente + ": " + salarioFinalGerente);
-        System.out.println("Salário final do Estagiário " + nomeEstagiario + ": " + salarioFinalEstagiario);
+    public Funcionario(String nome, double salarioBase) {
+        this.nome = nome;
+        this.salarioBase = salarioBase;
+    }
 
+    public double calcularSalarioFinal() {
+        return salarioBase;
+    }
+
+    public void exibirSalarioFinal() {
+        System.out.println("Funcionário: " + nome);
+        System.out.println("Salário Final: R$ " + calcularSalarioFinal());
+    }
+}
+
+class Gerente extends Funcionario {
+    public Gerente(String nome, double salarioBase) {
+        super(nome, salarioBase);
+    }
+
+    @Override
+    public double calcularSalarioFinal() {
+        return salarioBase * 1.2;
+    }
+}
+
+class Estagiario extends Funcionario {
+    public Estagiario(String nome, double salarioBase) {
+        super(nome, salarioBase);
+    }
+
+    @Override
+    public double calcularSalarioFinal() {
+        return salarioBase * 0.9;
     }
 }

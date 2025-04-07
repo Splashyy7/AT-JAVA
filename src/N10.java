@@ -31,7 +31,6 @@ public class N10 {
             while ((linha = reader.readLine()) != null) {
                 System.out.println(linha);
             }
-
         } catch (IOException e) {
             System.out.println("Ocorreu um erro ao manipular o arquivo.");
         } catch (NumberFormatException e) {

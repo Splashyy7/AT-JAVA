@@ -15,20 +15,20 @@ public class N2 {
             senha = scanner.nextLine();
 
             if (senha.length() < 8) {
-                System.out.println("Erro: A senha deve ter no mínimo 8 caracteres.");
+                System.out.println("A senha deve ter no mínimo 8 caracteres");
             }
             else if (!senha.matches(".*[A-Z].*")) {
-                System.out.println("Erro: A senha deve conter pelo menos uma letra maiúscula.");
+                System.out.println("A senha deve conter pelo menos uma letra maiúscula");
             }
             else if (!senha.matches(".*[0-9].*")) {
-                System.out.println("Erro: A senha deve conter pelo menos um número.");
+                System.out.println("A senha deve conter pelo menos um número");
             }
             else if (!senha.matches(".*[@#$%^&*()_\\-+=<>?/\\[\\]{}|].*")) {
-                System.out.println("Erro: A senha deve conter pelo menos um caractere especial (@, #, $, etc).");
+                System.out.println("A senha deve conter pelo menos um caractere especial (@, #, $)");
             }
             else {
                 senhaValida = true;
-                System.out.println("Senha cadastrada com sucesso! Bem-vindo(a), " + nome + "!");
+                System.out.println("Senha cadastrada");
             }
         }
     }
